@@ -11,17 +11,26 @@ ANPR (Automatic Number Plate Recognition) is a project that utilizes TensorFlow 
 
 ## Installation
 
-1. Clone the repository:
-
-```shell
-git clone https://github.com/shwetankagarwal/ANPR_TensorFlow_EasyOCR.git
-```
-
-2. Install the required dependencies using pip:
-
-```shell
-pip install -r requirements.txt
-```
+<b>Step 1.</b> Clone this repository: https://github.com/shwetankagarwal/ANPR_TensorFlow_EasyOCR
+<br/><br/>
+<b>Step 2.</b> Create a new virtual environment 
+<pre>
+python -m venv anprsys
+</pre> 
+<br/>
+<b>Step 3.</b> Activate your virtual environment
+<pre>
+source anprsys/bin/activate # Linux
+.\anprsys\Scripts\activate # Windows 
+</pre>
+<br/>
+<b>Step 4.</b> Install dependencies and add virtual environment to the Python Kernel
+<pre>
+python -m pip install --upgrade pip
+pip install ipykernel
+python -m ipykernel install --user --name=anprsys
+</pre>
+<br/>
 
 ## Usage
 
@@ -35,17 +44,8 @@ pip install -r requirements.txt
    - Prepare the annotations in a compatible format for training.
 
 3. Training:
-   - Train the license plate detection model using TensorFlow. Run the following command:
-
-   ```shell
-   python train_detection_model.py
-   ```
-
-   - Train the character recognition model. Run the following command:
-
-   ```shell
-   python train_recognition_model.py
-   ```
+   - Train the license plate detection model using TensorFlow.
+   - Train the character recognition model - EasyOCR.
 
 4. Model evaluation:
    - Evaluate the trained models using a validation set to measure accuracy and performance.
@@ -53,10 +53,6 @@ pip install -r requirements.txt
 5. Integration with EasyOCR:
    - Integrate the trained TensorFlow models with EasyOCR library.
    - Run the ANPR script to perform license plate recognition:
-
-   ```shell
-   python anpr.py --image /path/to/image.jpg
-   ```
 
    The script will detect license plates in the image and provide the recognized license plate numbers.
 
